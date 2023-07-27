@@ -13,13 +13,17 @@ const theme = {
         gray500:'#777777'
     },
     fonts: {
-        epilogue: '"Epilogue",sans-serif',
+        epilogue: 'Epilogue',
         inter: '"Inter", sans-serif'
     },
-    logo: './src/assets/img/logo.png',
+    logo: './src/assets/img/logo.svg',
     icons:{
         home: './src/assets/icons/home.svg',
         perfil:  './src/assets/icons/perfil.svg',
+        sair: './src/assets/icons/sair.svg',
+        search: './src/assets/icons/search.svg',
+        arrowLeft: './src/assets/icons/arrow-left.svg',
+        arrowRight: './src/assets/icons/arrow-right.svg',
     }
 
 }

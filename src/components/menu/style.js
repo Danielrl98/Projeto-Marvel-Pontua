@@ -12,6 +12,14 @@ export const SubNav = styled.div`
     top:0;
     width:256px;
     box-shadow: 6px 0px 18px 0px rgba(0, 0, 0, 0.06);
+    height:100vh;
+
+    @media(max-width:767px){
+        position: relative;  
+        height:auto;
+        width:100%;
+    }
+        
 `
 export const DivLogo = styled.div`
    
@@ -32,7 +40,9 @@ export const Opcoes = styled.div`
     padding-bottom: 22px;
     padding-right: 20px;
     border-bottom: 1px solid ${theme.color.divider};
-
+    @media(max-width:767px){
+        padding-bottom: 0;
+    }
     li{
         list-style: none;
     }
@@ -56,4 +66,37 @@ export const Opcoes = styled.div`
         background: ${theme.color.grayBackground};
     }
 
+`
+export const Logout = styled.div`
+    padding-top: 28px;
+    padding-left: 23px;
+    padding-right: 20px;
+
+    @media(max-width:767px){
+        padding-top: 0;
+        padding-left: 16px;
+        padding-bottom: 16px;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        color: ${theme.color.black};
+        font-family: ${theme.fonts.epilogue};
+        font-size: 13px ;
+        font-style: normal;
+        font-weight: 500 ;
+        line-height: normal;
+        letter-spacing: -0.39px;
+    }
+    li{
+        padding: 8px 7px;
+        margin-bottom: 4px;
+        border-radius: 10px;
+        display: flex;
+        gap: 14px;
+    }
+    li:active{
+        background: ${theme.color.grayBackground};
+    }
 `

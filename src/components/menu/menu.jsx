@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import theme from "../../theme/theme";
-import { Nav, SubNav, DivLogo, Opcoes } from "./style";
+import { Nav, SubNav, DivLogo, Opcoes, Logout  } from "./style";
 import { Link } from "react-router-dom";
 
 export default function Menu() {
@@ -31,6 +31,19 @@ export default function Menu() {
               </ul>
             </nav>
           </Opcoes>
+          <Logout>
+          <nav>
+              <ul>
+                <li>
+                  <img src={theme.icons.sair}></img>
+                  <div>
+                    <Link to={"/sair"}>Sair</Link>
+                  </div>
+                </li>
+               
+              </ul>
+            </nav>
+          </Logout>
         </SubNav>
       </Nav>
     </Fragment>
