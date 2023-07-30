@@ -7,7 +7,8 @@ export const Grid = styled.ul`
     gap:10px;
     width:100%;
     padding:20px;
-    li{
+    
+    a{
         list-style: none;
         display:flex;
         gap: 14px;
@@ -16,6 +17,8 @@ export const Grid = styled.ul`
         box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.06);
         padding: 14px 10px;
         height: 147px;
+        flex: 1 0 auto;
+        cursor: pointer;
     }
     aside{
         display:flex;
@@ -41,6 +44,9 @@ export const Grid = styled.ul`
         font-weight: 300;
         line-height: normal;
         letter-spacing: -0.36px;
+    }
+    .div-img{
+        width: 83px;
     }
     .img{
         width: 83px;
@@ -109,4 +115,17 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+`
+export const Results = styled.p`
+        color: ${theme.color.blue200};
+        font-family: ${theme.fonts.epilogue};
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.36px;
+        text-align: center;
+        padding:20px
+        
+
 `

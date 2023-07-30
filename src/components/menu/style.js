@@ -43,9 +43,7 @@ export const Opcoes = styled.div`
     @media(max-width:767px){
         padding-bottom: 0;
     }
-    li{
-        list-style: none;
-    }
+    
     a{
         color: ${theme.color.black};
         font-family: ${theme.fonts.epilogue};
@@ -54,17 +52,29 @@ export const Opcoes = styled.div`
         font-weight: 500 ;
         line-height: normal;
         letter-spacing: -0.39px;
+        display:flex;
+        gap:14px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6px;
+        padding: 8px 7px;
+        border-radius: 10px;
+        width: 100px;
+        cursor:pointer;
+    }
+    .active{
+        color:#F21A05;
+        background: ${theme.color.grayBackground};
+        
     }
     li{
-        padding: 8px 7px;
+        list-style: none;
         margin-bottom: 4px;
-        border-radius: 10px;
         display: flex;
-        gap: 14px;
+       
     }
-    li:active{
-        background: ${theme.color.grayBackground};
-    }
+  
 
 `
 export const Logout = styled.div`
@@ -98,5 +108,15 @@ export const Logout = styled.div`
     }
     li:active{
         background: ${theme.color.grayBackground};
+    }
+    .logout{
+        cursor:pointer;
+        color: ${theme.color.black};
+        font-family: ${theme.fonts.epilogue};
+        font-size: 13px ;
+        font-style: normal;
+        font-weight: 500 ;
+        line-height: normal;
+        letter-spacing: -0.39px;
     }
 `

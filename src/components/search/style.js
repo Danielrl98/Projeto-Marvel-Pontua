@@ -7,7 +7,7 @@ export const DivInput = styled.div`
   padding:22px 37px 23px 37px;
   gap: 16px;
   border-bottom: 1px solid ${theme.color.divider};
-
+  height: 62px;
   input{
     
     border: none;
@@ -25,5 +25,6 @@ export const DivInput = styled.div`
     }
     
   }
+
 
 `

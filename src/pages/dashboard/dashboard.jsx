@@ -5,8 +5,10 @@ import Search from "../../components/search/search";
 
 import Characters from "./componentes/characters/characters";
 
+
 export default function Dashboard() {
  
+
   return (
     <Fragment>
       <Grid>
@@ -14,7 +16,7 @@ export default function Dashboard() {
           <Menu />
         </div>
         <div>
-          <Search />
+          <Search hidden={true}/>
           <Characters />
         </div>
       </Grid>

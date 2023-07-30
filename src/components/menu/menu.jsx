@@ -1,46 +1,48 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import theme from "../../theme/theme";
-import { Nav, SubNav, DivLogo, Opcoes, Logout  } from "./style";
-import { Link } from "react-router-dom";
+import { Nav, SubNav, DivLogo, Opcoes, Logout } from "./style";
+import { NavLink } from "react-router-dom";
+import { Context } from "../../context/Auth";
 
 export default function Menu() {
+  const { handleLogout } = useContext(Context)
+  
   return (
     <Fragment>
       <Nav>
         <SubNav>
           <DivLogo>
-            <Link to={"/dashboard"}>
+            <NavLink to={"/dashboard"}>
               <img src={theme.logo}></img>
-            </Link>
+            </NavLink>
           </DivLogo>
           <Opcoes>
             <nav>
               <ul>
                 <li>
-                  <img src={theme.icons.home}></img>
-                  <div>
-                    <Link to={"/dashboard"}>Home</Link>
-                  </div>
+                  <NavLink to={"/dashboard"} activeclassname="active">
+                    <img src={theme.icons.home}></img>
+                    <div>Home</div>
+                  </NavLink>
                 </li>
                 <li>
-                  <img src={theme.icons.perfil}></img>
-                  <div>
-                    <Link to={"/perfil"}>Perfil</Link>
-                  </div>
+                  <NavLink to={"/perfil"} activeclassname="active">
+                    <img src={theme.icons.perfil}></img>
+                    <div>Perfil</div>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
           </Opcoes>
           <Logout>
-          <nav>
+            <nav>
               <ul>
                 <li>
                   <img src={theme.icons.sair}></img>
                   <div>
-                    <Link to={"/sair"}>Sair</Link>
+                    <div className="logout" onClick={handleLogout}>Sair</div>
                   </div>
                 </li>
-               
               </ul>
             </nav>
           </Logout>
