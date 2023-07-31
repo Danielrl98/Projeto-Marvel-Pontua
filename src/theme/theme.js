@@ -7,8 +7,9 @@ const theme = {
         blue600: '#213770',
         blue500: '#293D71',
         blue200: '#747d94',
-        orange500: '#f21a05',
         orange400: '#f43724',
+        orange500: '#f21a05',
+        orange700: '#F21A05',
         grayBackground: '#f5f6f8',
         gray100: '#eaecf0',
         gray150:'#FBFBFB',
@@ -34,6 +35,7 @@ const theme = {
         arrowWhite: '../src/assets/icons/arrow-right-white.svg',
         inputLogin: '../src/assets/icons/input-login.svg',
         inputSenha: '../src/assets/icons/input-senha.svg',
+        forgotPassword: '../src/assets/icons/forgot-password.svg'
     }
 
 }

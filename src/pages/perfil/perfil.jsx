@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
-import Menu from "../../components/menu/menu";
-import Search from "../../components/search/search";
+import Menu from "../../layouts/menu/menu";
+import Search from "../../layouts/search/search";
 import { Grid, Buttons, Header } from "./style";
 import VisaoGeral from "./components/visaoGeral/visaoGeral";
 import Teams from "./components/teams/teams";
@@ -9,6 +9,7 @@ import Species from "./components/species/Species";
 import Authors from "./components/authors/autors";
 import axios from "axios";
 import md5 from "md5";
+import { publicKey, privateKey , baseURL } from "../../Auth/Auth";
 
 export default function Perfil(props) {
 
@@ -17,12 +18,8 @@ export default function Perfil(props) {
   const [exibirComponent, SetExibirComponent] = useState("A");
   const [id,setId] = useState(0)
   const [load,setLoad] = useState(true)
-
-  const publicKey = process.env.PUBLIC_KEY;
-  const privateKey = process.env.PRIVATE_KEY;
-  const baseURL = process.env.BASE_URL;
-
   const [character,setCharacter] = useState([])
+  
   const apiUrl = baseURL + `/v1/public/characters/${id}`;
 
 

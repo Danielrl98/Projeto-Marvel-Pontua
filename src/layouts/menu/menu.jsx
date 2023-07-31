@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from "react";
 import theme from "../../theme/theme";
 import { Nav, SubNav, DivLogo, Opcoes, Logout } from "./style";
 import { NavLink } from "react-router-dom";
-import { Context } from "../../context/Auth";
+import { Context } from "../../context/context";
 
 export default function Menu() {
   const { handleLogout } = useContext(Context)

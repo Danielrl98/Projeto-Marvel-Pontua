@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import axios from "axios";
 import md5 from "md5";
 import { useState } from "react";
+import { publicKey,privateKey,baseURL } from "../../../../Auth/Auth";
 
 import {
   Grid,
@@ -28,9 +29,6 @@ export default function Characters() {
   const [totalResults, setTotalResults] = useState(0);
   const [numero, setNumero] = useState(1);
 
-  const publicKey = process.env.PUBLIC_KEY;
-  const privateKey = process.env.PRIVATE_KEY;
-  const baseURL = process.env.BASE_URL;
 
   const apiUrl = baseURL + "/v1/public/characters";
 

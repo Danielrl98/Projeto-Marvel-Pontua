@@ -1,6 +1,6 @@
 import React from 'react';
 import Rotas from './routes';
-import { Auth } from './context/Auth';
+import { ContextProvider } from './context/context';
 import history from './config/history';
 
 
@@ -8,9 +8,9 @@ function App() {
   
   return (
     <React.Fragment>
-       <Auth history={history}>
-          <Rotas />  
-      </Auth> 
+       <ContextProvider >
+          <Rotas history={history}/>  
+      </ContextProvider> 
     </React.Fragment>
   )
 }
