@@ -6,13 +6,19 @@ import { Link, Navigate } from "react-router-dom";
 import { MessageErrorComponent } from "../../components/messageError";
 import { InputComponent } from "../../components/input";
 import HomeLogin from "../../layouts/home/home";
+import history from "../../config/history";
 
 export default function Login(props) {
   const prop = props.value;
 
-  const { authenticate,user } = useContext(Context);
+  const { authenticate, user } = useContext(Context);
 
-  
+  if(localStorage.getItem('token')){
+      history.push('/select-hero')
+      location.reload()
+      return
+  }
+
   const [hidePass, setHidePass] = useState("password");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -37,9 +43,9 @@ export default function Login(props) {
    
     background();
     
-    console.log(user)
+    console.log(authenticate)
 
-  },[user]);
+  },[authenticate]);
   return (
     <Fragment>
       <HomeLogin>

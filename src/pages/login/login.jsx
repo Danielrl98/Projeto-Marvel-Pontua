@@ -65,7 +65,8 @@ export default function UtilsLogin(){
       
      const userData = {
         email:email,
-        heroId:''
+        heroId:'',
+        heroName:  ''
       }
 
     await signInWithEmailAndPassword(auth, email , pass)
@@ -153,7 +154,8 @@ export default function UtilsLogin(){
     
               const userData = {
               email:email,
-              heroId:''
+              heroId:'',
+              heroName:''
               }
             const unsubscribe =  auth.onAuthStateChanged((user) => {
               if (user) {

@@ -19,11 +19,16 @@ function Rotas() {
    
     const { authenticate } = useContext(Context)
    
+
     if(authenticate){
 
       return children
 
     }
+    if(localStorage.getItem('token')){
+        localStorage.removeItem('token')
+    }
+     
      history.push('/')
      location.reload()
      return

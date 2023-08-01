@@ -15,11 +15,11 @@ export const Modal = styled.div`
     }
     }
     section{
-        background-color:${theme.color.white};
+    background-color:${theme.color.white};
     border-radius: 28px;
     padding: 49px 36px 44px 36px;
     width: 380px;
-
+    
     @media(max-width:767px){
         width: 100%;
         padding: 49px 12px 44px 12px;

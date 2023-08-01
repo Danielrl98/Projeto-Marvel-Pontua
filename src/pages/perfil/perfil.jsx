@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import Menu from "../../layouts/menu/menu";
 import Search from "../../layouts/search/search";
 import { Grid, Buttons, Header } from "./style";
@@ -10,6 +10,10 @@ import Authors from "./components/authors/autors";
 import axios from "axios";
 import md5 from "md5";
 import { publicKey, privateKey , baseURL } from "../../Auth/Auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { firebase } from "../../firebase/firebase";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { Context } from "../../context/context";
 
 export default function Perfil(props) {
 
@@ -60,8 +64,32 @@ export default function Perfil(props) {
       SetExibirComponent("A");
     }
   }
+  const auth = getAuth(firebase)
+  const db = getFirestore(firebase)
 
- 
+  const { user, setUser } = useContext(Context);
+
+  function requestUser() {
+
+    console.log(user)
+    if (user) {
+      const result = doc(db, "users", user.uid);
+   
+      getDoc(result)
+        .then((docSnapshot) => {
+          if (docSnapshot.exists()) {
+            const userData2 = docSnapshot.data();
+            console.log(userData2);
+            setId(userData2.heroId)
+          } else {
+            console.log("Dados do usuário não encontrados.");
+          }
+        })
+        .catch((error) => {
+          console.error("Erro ao buscar dados do usuário:", error);
+        });
+    }
+  }
   useEffect(() => {
 
     if(props.idhero){
@@ -72,15 +100,20 @@ export default function Perfil(props) {
       }
       
     } else {
-      setId(1009610)
 
       if( id !== 0){
         requisicao()
       }
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        setUser(user);
+        requestUser();
+        });
+      return unsubscribe;
+   
     }
     handleAlternate();
     
-  }, [exibirComponent,id]);
+  }, [exibirComponent,id,user]);
 
   return (
     <Fragment>

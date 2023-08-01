@@ -26,9 +26,7 @@ function ContextProvider({ children }) {
         localStorage.setItem('token',user.accessToken)
 
         setAuthenticate(true);
-
         
-       
       } else {
         setAuthenticate(false);
         console.log('Token invalido');

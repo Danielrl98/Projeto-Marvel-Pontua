@@ -13,8 +13,10 @@ const theme = {
         grayBackground: '#f5f6f8',
         gray100: '#eaecf0',
         gray150:'#FBFBFB',
+        gray300: '#D0D5DD',
         gray400: '##B7B7B7',
-        gray500:'#777777'
+        gray500:'#777777',
+        gray900: '##101828'
     },
     fonts: {
         epilogue: 'Epilogue',
