@@ -2,11 +2,11 @@ import React, { Fragment, useContext, useEffect, useState } from "react";
 import Menu from "../../layouts/menu/menu";
 import Search from "../../layouts/search/search";
 import { Grid, Buttons, Header } from "./style";
-import VisaoGeral from "./components/visaoGeral/visaoGeral";
-import Series from "./components/series/series";
-import Events from "./components/events/events";
+import VisaoGeral from "./components/visaoGeral";
+import Series from "./components/series";
+import Events from "./components/events";
 import { Authors } from "./components/authors/index";
-import ComicsIndex from './components/comics/comicsIndex'
+import { ComicsIndex } from './components/comics/index'
 import axios from "axios";
 import md5 from "md5";
 import { publicKey, privateKey , baseURL } from "../../Auth/Auth";

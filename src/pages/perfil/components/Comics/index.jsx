@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { ComicsGrid } from "./style";
 
-export default function ComicsIndex(props) {
+export const ComicsIndex = (props) => {
   const character = props.character.map((e) => e.comics.items);
 
   useEffect(() => {
