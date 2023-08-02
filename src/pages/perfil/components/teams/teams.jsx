@@ -17,8 +17,6 @@ export default function Teams(props) {
     "Warrios three",
   ];
 
-  let newArray = [];
-
   const [character, setCharacter] = useState([]);
   const [load, setLoad] = useState(true);
 
