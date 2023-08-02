@@ -26,7 +26,8 @@ export default function Perfil(props) {
   
   const apiUrl = baseURL + `/v1/public/characters/${id}`;
 
-
+  let teste = []
+  
   const timestamp = new Date().getTime();
 
   const hash = md5(timestamp + privateKey + publicKey);
