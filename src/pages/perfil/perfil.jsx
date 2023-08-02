@@ -3,10 +3,10 @@ import Menu from "../../layouts/menu/menu";
 import Search from "../../layouts/search/search";
 import { Grid, Buttons, Header } from "./style";
 import VisaoGeral from "./components/visaoGeral/visaoGeral";
-import Comics from "./components/comics/comicsIndex";
 import Series from "./components/series/series";
 import Events from "./components/events/events";
 import Authors from "./components/authors/autors";
+import ComicsIndex from './components/comics/comicsIndex'
 import axios from "axios";
 import md5 from "md5";
 import { publicKey, privateKey , baseURL } from "../../Auth/Auth";
@@ -193,7 +193,7 @@ export default function Perfil(props) {
 
           <div>
             {exibirComponent === "A" && <VisaoGeral character={character} />}
-            {exibirComponent === "B" && <Comics character={character} />}
+            {exibirComponent === "B" && <ComicsIndex character={character} />}
             {exibirComponent === "C" && <Series character={character}/>}
             {exibirComponent === "D" && <Events character={character}/>}
             {exibirComponent === "E" && <Authors id={id}  />}

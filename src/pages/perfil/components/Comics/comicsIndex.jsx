@@ -1,8 +1,7 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { ComicsGrid } from "./style";
-import { Context } from "../../../../context/context";
 
-export default function Comics(props) {
+export default function ComicsIndex(props) {
   const character = props.character.map((e) => e.comics.items);
 
   useEffect(() => {
