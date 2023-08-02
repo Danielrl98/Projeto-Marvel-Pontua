@@ -5,7 +5,7 @@
 
 [[redirects]]
   from = "/src/*"
-  to = "/.netlify/functions/assets/icons/:splat"
+  to = "/"
   status = 200
 
 [[redirects]]
