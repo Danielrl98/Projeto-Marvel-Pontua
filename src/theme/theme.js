@@ -22,25 +22,25 @@ const theme = {
         epilogue: 'Epilogue',
         inter: '"Inter", sans-serif'
     },
-    logo: '/src/assets/img/logo.svg',
-    logoWhite: '/src/assets/img/logo-white.svg',
+    logo: '/src/img/logo.svg',
+    logoWhite: '/src/img/logo-white.svg',
     imgs:{
-        build: '/src/assets/img/build.svg'
+        build: '/src/img/build.svg'
     },
     icons:{
-        home: '/src/assets/icons/home.svg',
-        perfil:  '/src/assets/icons/perfil.svg',
-        sair: '/src/assets/icons/sair.svg',
-        search: '/src/assets/icons/search.svg',
-        arrowLeft: '/src/assets/icons/arrow-left.svg',
-        arrowRight: '/src/assets/icons/arrow-right.svg',
-        arrowWhite: '/src/assets/icons/arrow-right-white.svg',
-        inputLogin: '/src/assets/icons/input-login.svg',
-        inputSenha: '/src/assets/icons/input-senha.svg',
-        forgotPassword: '/src/assets/icons/forgot-password.svg',
-        user: '/src/assets/icons/user.svg',
-        arrowDown: '/src/assets/icons/arrow-down.svg',
-        arrowUP: '/src/assets/icons/arrow-up.svg'
+        home: '/src/icons/home.svg',
+        perfil:  '/src/icons/perfil.svg',
+        sair: '/src/icons/sair.svg',
+        search: '/src/icons/search.svg',
+        arrowLeft: '/src/icons/arrow-left.svg',
+        arrowRight: '/src/icons/arrow-right.svg',
+        arrowWhite: '/src/icons/arrow-right-white.svg',
+        inputLogin: '/src/icons/input-login.svg',
+        inputSenha: '/src/icons/input-senha.svg',
+        forgotPassword: '/src/icons/forgot-password.svg',
+        user: '/src/icons/user.svg',
+        arrowDown: '/src/icons/arrow-down.svg',
+        arrowUP: '/src/icons/arrow-up.svg'
     }
 
 }
