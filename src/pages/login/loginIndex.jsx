@@ -156,7 +156,7 @@ export default function UtilsLogin(){
                console.log('autenticado:',user)
                saveUserData(user.uid, userData);
                 
-               alert('Usuário criado com sucesso')
+               alert('Usuário criado com sucesso, faça login')
               } else {
                
                 console.log('erro')
