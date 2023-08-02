@@ -22,25 +22,25 @@ const theme = {
         epilogue: 'Epilogue',
         inter: '"Inter", sans-serif'
     },
-    logo: '/src/img/logo.svg',
-    logoWhite: '/src/img/logo-white.svg',
+    logo: '/public/assets/img/logo.svg',
+    logoWhite: '/public/assets/img/logo-white.svg',
     imgs:{
-        build: '/src/img/build.svg'
+        build: '/public/assets/img/build.svg'
     },
     icons:{
-        home: '/src/icons/home.svg',
-        perfil:  '/src/icons/perfil.svg',
-        sair: '/src/icons/sair.svg',
-        search: '/src/icons/search.svg',
-        arrowLeft: '/src/icons/arrow-left.svg',
-        arrowRight: '/src/icons/arrow-right.svg',
-        arrowWhite: '/src/icons/arrow-right-white.svg',
-        inputLogin: '/src/icons/input-login.svg',
-        inputSenha: '/src/icons/input-senha.svg',
-        forgotPassword: '/src/icons/forgot-password.svg',
-        user: '/src/icons/user.svg',
-        arrowDown: '/src/icons/arrow-down.svg',
-        arrowUP: '/src/icons/arrow-up.svg'
+        home: '/public/assets/icons/home.svg',
+        perfil:  '/public/assets/icons/perfil.svg',
+        sair: '/public/assets/icons/sair.svg',
+        search: '/public/assets/icons/search.svg',
+        arrowLeft: '/public/assets/icons/arrow-left.svg',
+        arrowRight: '/public/assets/icons/arrow-right.svg',
+        arrowWhite: '/public/assets/icons/arrow-right-white.svg',
+        inputLogin: '/public/assets/icons/input-login.svg',
+        inputSenha: '/public/assets/icons/input-senha.svg',
+        forgotPassword: '/public/assets/icons/forgot-password.svg',
+        user: '/public/assets/icons/user.svg',
+        arrowDown: '/public/assets/icons/arrow-down.svg',
+        arrowUP: '/public/assets/icons/arrow-up.svg'
     }
 
 }
