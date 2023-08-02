@@ -5,7 +5,7 @@ import { Grid, Buttons, Header } from "./style";
 import VisaoGeral from "./components/visaoGeral/visaoGeral";
 import Teams from "./components/teams/teams";
 import Powers from "./components/powers/powers";
-import Species from "./components/species/Species";
+import Species from "./components/species/speciesIndex";
 import Authors from "./components/authors/autors";
 import axios from "axios";
 import md5 from "md5";
