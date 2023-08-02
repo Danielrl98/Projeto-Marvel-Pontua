@@ -5,7 +5,7 @@ import { Grid, Buttons, Header } from "./style";
 import VisaoGeral from "./components/visaoGeral/visaoGeral";
 import Series from "./components/series/series";
 import Events from "./components/events/events";
-import Authors from "./components/authors/autors";
+import { Authors } from "./components/authors/index";
 import ComicsIndex from './components/comics/comicsIndex'
 import axios from "axios";
 import md5 from "md5";

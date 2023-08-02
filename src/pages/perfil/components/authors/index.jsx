@@ -4,7 +4,7 @@ import axios from "axios";
 import md5 from "md5";
 import { publicKey,privateKey,baseURL } from "../../../../Auth/Auth";
 
-export default function Authors(props){
+export const Authors = (props) => {
 
     const [id,setId] = useState(props.id)
     const [character,setCharacter] = useState([])
