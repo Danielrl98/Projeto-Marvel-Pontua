@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import theme from "../../../../theme/theme";
 
-export const TeamsGrid = styled.div`
+export const EventsGrid = styled.div`
 
-li{
     color: ${theme.color.gray500};
     font-family: ${theme.fonts.inter};
     font-size: 16px;
@@ -11,6 +10,8 @@ li{
     font-weight: 600;
     line-height: 24px;
     list-style: none;
-}
 
+    li{
+        list-style: none;
+    }
 `

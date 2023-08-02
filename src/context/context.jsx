@@ -7,8 +7,10 @@ const Context = createContext();
 
 function ContextProvider({ children }) {
  
+ 
   const [authenticate, setAuthenticate] = useState(true);
   const [loading, setLoading] = useState(true);
+ 
 
   const [user, setUser] = useState(null);
 

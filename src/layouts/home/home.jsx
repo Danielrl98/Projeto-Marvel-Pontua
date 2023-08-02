@@ -2,6 +2,7 @@ import React,{Fragment} from "react";
 import { Modal } from "../../components/modal-form";
 import { Header, Container} from "./style";
 import theme from "../../theme/theme";
+import { NavLink } from "react-router-dom";
 
 export default function HomeLogin( {children}){
    
@@ -9,7 +10,7 @@ export default function HomeLogin( {children}){
     <Fragment>
       <Container>
         <Header>
-          <img src={theme.logoWhite} alt="" />
+            <NavLink to="/dashboard"> <img src={theme.logoWhite} /></NavLink>
         </Header>
         <Modal>
           <div>

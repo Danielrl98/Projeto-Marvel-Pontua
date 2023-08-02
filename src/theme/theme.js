@@ -1,11 +1,3 @@
-let enviromnent=`production`
-
-let path = `/public`
-
-if(enviromnent == `production`){
-    path = ``
-}
-
 const theme = {
     color: {
         white: `#ffffff`,
@@ -30,25 +22,25 @@ const theme = {
         epilogue: `Epilogue`,
         inter: `"Inter", sans-serif`
     },
-    logo: `${path}/assets/img/logo.svg`,
-    logoWhite: `${path}/assets/img/logo-white.svg`,
+    logo: `/assets/img/logo.svg`,
+    logoWhite: `/assets/img/logo-white.svg`,
     imgs:{
-        build: `${path}/assets/img/build.svg`
+        build: `/assets/img/build.svg`
     },
     icons:{
-        home: `${path}/assets/icons/home.svg`,
-        perfil:  `${path}/assets/icons/perfil.svg`,
-        sair: `${path}/assets/icons/sair.svg`,
-        search: `${path}/assets/icons/search.svg`,
-        arrowLeft: `${path}/assets/icons/arrow-left.svg`,
-        arrowRight: `${path}/assets/icons/arrow-right.svg`,
-        arrowWhite: `${path}/assets/icons/arrow-right-white.svg`,
-        inputLogin: `${path}/assets/icons/input-login.svg`,
-        inputSenha: `${path}/assets/icons/input-senha.svg`,
-        forgotPassword: `${path}/assets/icons/forgot-password.svg`,
-        user: `${path}/assets/icons/user.svg`,
-        arrowDown: `${path}/assets/icons/arrow-down.svg`,
-        arrowUP: `${path}/assets/icons/arrow-up.svg`
+        home: `/assets/icons/home.svg`,
+        perfil:  `/assets/icons/perfil.svg`,
+        sair: `/assets/icons/sair.svg`,
+        search: `/assets/icons/search.svg`,
+        arrowLeft: `/assets/icons/arrow-left.svg`,
+        arrowRight: `/assets/icons/arrow-right.svg`,
+        arrowWhite: `/assets/icons/arrow-right-white.svg`,
+        inputLogin: `/assets/icons/input-login.svg`,
+        inputSenha: `/assets/icons/input-senha.svg`,
+        forgotPassword: `/assets/icons/forgot-password.svg`,
+        user: `/assets/icons/user.svg`,
+        arrowDown: `/assets/icons/arrow-down.svg`,
+        arrowUP: `/assets/icons/arrow-up.svg`
     }
 
 }

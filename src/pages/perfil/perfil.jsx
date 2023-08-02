@@ -3,9 +3,9 @@ import Menu from "../../layouts/menu/menu";
 import Search from "../../layouts/search/search";
 import { Grid, Buttons, Header } from "./style";
 import VisaoGeral from "./components/visaoGeral/visaoGeral";
-import Teams from "./components/teams/teams";
-import Powers from "./components/powers/powers";
-import Species from "./components/species/speciesIndex";
+import Comics from "./components/comics/comics";
+import Series from "./components/series/series";
+import Events from "./components/events/events";
 import Authors from "./components/authors/autors";
 import axios from "axios";
 import md5 from "md5";
@@ -14,6 +14,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { firebase } from "../../firebase/firebase";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { Context } from "../../context/context";
+
 
 export default function Perfil(props) {
 
@@ -25,8 +26,6 @@ export default function Perfil(props) {
   const [character,setCharacter] = useState([])
   
   const apiUrl = baseURL + `/v1/public/characters/${id}`;
-
-  let teste = []
   
   const timestamp = new Date().getTime();
 
@@ -45,6 +44,7 @@ export default function Perfil(props) {
         const characters = response.data.data.results;
        /* console.log(characters)*/
         setCharacter(characters)
+        
       })
   }
 
@@ -151,31 +151,31 @@ export default function Perfil(props) {
             </li>
             <li>
             {exibirComponent === "B" && (
-              <button onClick={() => SetExibirComponent("B")} className="active">Time</button>
+              <button onClick={() => SetExibirComponent("B")} className="active">Comics</button>
             ) 
             }
             {exibirComponent !== "B" && (
-              <button onClick={() => SetExibirComponent("B")}>Time</button>
+              <button onClick={() => SetExibirComponent("B")}>Comics</button>
             )  
             }
             </li>
             <li>
             {exibirComponent === "C" && (
-              <button onClick={() => SetExibirComponent("C")} className="active">Powers</button>
+              <button onClick={() => SetExibirComponent("C")} className="active">Series</button>
             ) 
             }
             {exibirComponent !== "C" && (
-              <button onClick={() => SetExibirComponent("C")}>Powers</button>
+              <button onClick={() => SetExibirComponent("C")}>Series</button>
             )  
             }
             </li>
             <li>
             {exibirComponent === "D" && (
-              <button onClick={() => SetExibirComponent("D")} className="active">Species</button>
+              <button onClick={() => SetExibirComponent("D")} className="active">Events</button>
             ) 
             }
             {exibirComponent !== "D" && (
-              <button onClick={() => SetExibirComponent("D")}>Species</button>
+              <button onClick={() => SetExibirComponent("D")}>Events</button>
             )  
             }
             </li>
@@ -193,9 +193,9 @@ export default function Perfil(props) {
 
           <div>
             {exibirComponent === "A" && <VisaoGeral character={character} />}
-            {exibirComponent === "B" && <Teams character={character} />}
-            {exibirComponent === "C" && <Powers />}
-            {exibirComponent === "D" && <Species/>}
+            {exibirComponent === "B" && <Comics character={character} />}
+            {exibirComponent === "C" && <Series character={character}/>}
+            {exibirComponent === "D" && <Events character={character}/>}
             {exibirComponent === "E" && <Authors id={id}  />}
           </div>
           </section>

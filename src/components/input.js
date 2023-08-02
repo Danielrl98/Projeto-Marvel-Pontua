@@ -2,7 +2,9 @@ import styled from "styled-components";
 import theme from "../theme/theme";
 
 export const InputComponent = styled.div`
-
+        div{
+            position: relative !important; 
+        }
     input{
         width: 100%;
         display: inline-flex;
@@ -20,6 +22,8 @@ export const InputComponent = styled.div`
         font-weight: 700;
         line-height: normal;
         letter-spacing: -1.04px;
+      
+        
             
         &:first-child{
             margin-bottom:23px;
