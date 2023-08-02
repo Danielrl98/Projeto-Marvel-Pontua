@@ -8,12 +8,14 @@ import { Context } from "../../context/context";
 import { Navigate } from "react-router-dom";
 import history from '../../config/history'
 
+
 const auth = getAuth(firebase);
 
 export default function UtilsLogin(){
 
 
-   const { setUser,user } = useContext(Context)
+    const { setUser,user } = useContext(Context)
+
     let email = ''
     let pass = ''
 
@@ -28,11 +30,9 @@ export default function UtilsLogin(){
     const [messagemErrorPass,setmessagemErrorPass] = useState('')
     const [createAccount,setCreateAccount] = useState(false)
    
-  
     const handleLogin = async (e) => {
       e.preventDefault()
      
-      const fakeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9c";
    
       if(validateEmail(email) == false){
         setErrorEmail(true)
@@ -53,13 +53,6 @@ export default function UtilsLogin(){
         setErrorPass(true)
         setmessagemErrorPass('Senha precisa ter no mínimo 6 caracteres')
         return
-      }
-      if (environment == "DEV") {
-        localStorage.setItem("token", fakeToken);
-        if (localStorage.getItem("token")) {
-          history.go("/dashboard");
-          return;
-        }
       }
       
       

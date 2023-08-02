@@ -22,7 +22,7 @@ export const Button = styled.div`
         padding: 16px 107px;
         gap: 9px;
         border-radius: 10px;  
-        font-family: Epilogue;
+        font-family: ${theme.fonts.epilogue};
         font-size: 24px;
         font-style: normal;
         font-weight: 700;

@@ -14,7 +14,7 @@ export const InputComponent = styled.div`
         background: ${theme.color.white};
         margin-bottom:11px;
         color: ${theme.color.blue500};
-        font-family: Epilogue;
+        font-family: ${theme.fonts.epilogue};
         font-size: 16px;
         font-style: normal;
         font-weight: 700;
@@ -37,14 +37,18 @@ export const InputComponent = styled.div`
         .img{
             position: absolute;
             right:15px;
-            top:23px;
+            top:19px;
+            background-color: white;
+            border-radius:200px;
+            text-align: center;
+            z-index: 10;
+            padding: 3px;
+           ;
         }
         
         .pass{
             cursor: pointer;
-            background-color: white;
-            z-index: 10;
-            padding-left: 5px;
+            
         }
        
 `

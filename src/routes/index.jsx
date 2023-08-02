@@ -12,6 +12,9 @@ import Login from "../pages/login/Login";
 import { Context } from "../context/context";
 import SelectHero from "../pages/select-hero/select-hero";
 import history from "../config/history";
+import { environment } from "../Auth/Auth";
+import ForgotPassword from "../pages/forgot-password/forgot";
+import Success from "../pages/sucessForgot/sucess";
 
 function Rotas() {
  
@@ -25,13 +28,16 @@ function Rotas() {
       return children
 
     }
+   
+
     if(localStorage.getItem('token')){
         localStorage.removeItem('token')
+       return
     }
-     
-     history.push('/')
-     location.reload()
-     return
+    
+    history.push('/')
+    location.reload()
+  
    
 }
 
@@ -41,6 +47,8 @@ function Rotas() {
          <Router>
         <Routes>
           <Route path="/" element={<Login />} exact />
+          <Route path="/forgot" element={<ForgotPassword />} exact />
+          <Route path="/success-forgot" element={<Success />} exact />
           <Route path="/dashboard" element={<Private> <Dashboard/> </Private>} />
           <Route path="/perfil" element={ <Private> <Perfil/> </Private> } exact />
           <Route path="/character/:id" element={<Private> <Character /> </Private>} exact />

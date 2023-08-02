@@ -67,11 +67,9 @@ const [error,setError] = useState(false)
                   <div>
                     <FakeSelect />
                     {error ? (
-   <MessageErrorComponent> Selecione um personagem para continuar</MessageErrorComponent>
+                    <MessageErrorComponent> Selecione um personagem para continuar</MessageErrorComponent>
                     ): ''
-                    }
-                 
-                    
+                    }           
                   </div>
                   <Submit>
                     <button onClick={handlePerfil} className="selecionar">Entrar</button>

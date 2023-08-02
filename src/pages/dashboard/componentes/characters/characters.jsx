@@ -28,7 +28,7 @@ export default function Characters() {
   const [lastPage, setLastPage] = useState(0);
   const [totalResults, setTotalResults] = useState(0);
   const [numero, setNumero] = useState(1);
-
+  const [search,setSearch] = useState(true)
 
   const apiUrl = baseURL + "/v1/public/characters";
 
@@ -37,7 +37,10 @@ export default function Characters() {
   const hash = md5(timestamp + privateKey + publicKey);
 
   async function requisicaoSearch() {
-
+    if(!search){
+      console.log('busca cancelada')
+      return
+    }
     let value = document.querySelector("#search").value;
 
     let params = {
@@ -56,10 +59,11 @@ export default function Characters() {
         let newValue = characters.filter((item) =>
           item.name.toLowerCase().includes(value.toLowerCase())
         );
-        console.log(newValue);
+        console.log("buscar feita")
         setTotalResults(newValue.length);
         setLastPage(Math.ceil(newValue.length / 10));
         setCharacter(newValue.slice(0, 10));
+        setSearch(false)
         setLoad3(true);
         document.querySelector(".enter").innerHTML = "Aperte Enter";
         return;
@@ -69,6 +73,10 @@ export default function Characters() {
       });
   }
   async function requisicao() {
+    if(!search){
+      console.log('busca cancelada')
+      return
+    }
     let params = {
       ts: timestamp,
       apikey: publicKey,
@@ -83,7 +91,7 @@ export default function Characters() {
         const characters = response.data.data.results;
         const totalCharacters = response.data.data.total;
         setTotalResults(totalCharacters);
-        console.log(characters);
+      
         setCharacter(characters);
 
         setTotalPages(Math.ceil(totalCharacters / pageSize));
@@ -92,23 +100,32 @@ export default function Characters() {
           setLastPage(Math.ceil(totalCharacters / pageSize));
         }
         document.querySelector(".enter").innerHTML = "Aperte Enter";
+        console.log("sem busca")
+        setSearch(false)
       })
       .catch((error) => {
         console.error("Ocorreu um erro:", error.message);
       });
   }
   useEffect(() => {
-    if (load == true) {
-      requisicaoSearch();
-    } else {
-      requisicao();
+    if(search == true){
+      if (load == true) {
+        requisicaoSearch();
+      } else {
+        requisicao();
+      }
     }
+   
+
     if (document.querySelector("#search")) {
       document.querySelector("#search").addEventListener("input", () => {
         document.querySelector(".enter").style.display = "block";
         if (document.querySelector("#search").value == "") {
-          document.querySelector(".enter").style.display = "none";
-          setLoad(false);
+          document.querySelector(".enter").innerHTML = "Aperte Enter";
+
+          setTimeout(() => {
+            document.querySelector(".enter").style.display="none"
+          }, 5000);
         }
       });
 
@@ -121,8 +138,10 @@ export default function Characters() {
           document.querySelector("#search").blur();
 
           if (document.querySelector("#search").value == "") {
+            setSearch(true)
             setLoad(false);
           } else {
+            setSearch(true)
             setLoad(true);
           }
         }
@@ -131,14 +150,19 @@ export default function Characters() {
   }, [currentPage, lastPage, load, load3, numero]);
 
   const handleNextPage = () => {
+    setSearch(true)
     setCurrentPage(currentPage + 1);
+   
   };
 
   const handlePrevPage = () => {
+    setSearch(true)
     setCurrentPage(currentPage - 1);
+
   };
 
   const handlePageClick = (page) => {
+    setSearch(true)
     setCurrentPage(page);
   };
 

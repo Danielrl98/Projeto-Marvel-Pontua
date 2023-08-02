@@ -7,16 +7,19 @@ import { MessageErrorComponent } from "../../components/messageError";
 import { InputComponent } from "../../components/input";
 import HomeLogin from "../../layouts/home/home";
 import history from "../../config/history";
+import { NormalButton } from "../../components/button";
 
 export default function Login(props) {
   const prop = props.value;
 
+  const [disabledButton, setDisabledButton] = useState(false);
+
   const { authenticate, user } = useContext(Context);
 
-  if(localStorage.getItem('token')){
-      history.push('/select-hero')
-      location.reload()
-      return
+  if (localStorage.getItem("token")) {
+    history.push("/select-hero");
+    location.reload();
+    return;
   }
 
   const [hidePass, setHidePass] = useState("password");
@@ -40,12 +43,16 @@ export default function Login(props) {
   };
 
   useEffect(() => {
-   
-    background();
-    
-    console.log(authenticate)
+    if (email !== "" && pass !== "") {
+      setDisabledButton(true);
+    } else {
+      setDisabledButton(false);
+    }
 
-  },[authenticate]);
+    background();
+
+    console.log(authenticate);
+  }, [authenticate, email, pass]);
   return (
     <Fragment>
       <HomeLogin>
@@ -92,11 +99,20 @@ export default function Login(props) {
                 ""
               )}
             </InputComponent>
-            <Button>
-              <button className="loginAccount" onClick={prop.handleLogin}>
+            {disabledButton ? (
+              <NormalButton>
+                <button onClick={prop.handleLogin}>
+                  Entrar <img src={theme.icons.arrowWhite}></img>
+                </button>
+              </NormalButton>
+            ) : (
+              <NormalButton>
+              <button disabled={true} className="disabled" onClick={prop.handleLogin}>
                 Entrar <img src={theme.icons.arrowWhite}></img>
               </button>
-            </Button>
+            </NormalButton>
+            )}
+
             <Forgot>
               <img src={theme.icons.forgotPassword} />
 
