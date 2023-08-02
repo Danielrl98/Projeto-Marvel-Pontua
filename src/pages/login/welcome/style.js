@@ -22,13 +22,11 @@ export const Popup = styled.div`
 
     @media (max-width:767px){
         padding:24px;
-    }
-    }
-   
-
-    @media(max-width:767px){
         width: 90%;
     }
+
+    }
+   
     h1{
         color: ${theme.color.blue600};
         font-family: ${theme.fonts.epilogue};

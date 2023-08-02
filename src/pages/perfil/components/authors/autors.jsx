@@ -3,11 +3,13 @@ import { AuthorGrid } from "./style";
 import axios from "axios";
 import md5 from "md5";
 import { publicKey,privateKey,baseURL } from "../../../../Auth/Auth";
+
 export default function Authors(props){
 
     const [id,setId] = useState(props.id)
     const [character,setCharacter] = useState([])
-    const [load,setLoad] = useState(true)
+    const [load,setLoad] = useState(false)
+
 
     const apiUrl = baseURL + `/v1/public/characters/${id}/comics`;
 
@@ -16,6 +18,7 @@ export default function Authors(props){
     const hash = md5(timestamp + privateKey + publicKey);
 
     async function requisicao(){
+      
         let params = {
           ts: timestamp,
           apikey: publicKey,
@@ -27,20 +30,22 @@ export default function Authors(props){
           .then((response) => {
             const characters = response.data.data.results;
            
-            setCharacter([characters[7]])
-            console.log(characters)
+
+            setCharacter([characters[0]])
+            setLoad(true)
+            console.log(character)
           })
       }
       useEffect( () => {
-
+        
         requisicao()
-
+       
       },[])
 
     return(
         <Fragment>
             <AuthorGrid>
-                    { load ? character.map(( author) => { return (
+            { load ? character.map(( author) => { return (
                          <ul key={author.id}>
                             <li>{author.creators.items.map(creat => { return (
                                 <div key={creat.name}>
@@ -48,7 +53,7 @@ export default function Authors(props){
                                 </div>
                             )})}</li>
                          </ul>
-                    ) }): 'No found Author' }
+                    ) }): '' }
                 
             </AuthorGrid>
         </Fragment>
