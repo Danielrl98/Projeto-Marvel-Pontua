@@ -1,6 +1,9 @@
 {
     "rewrites": [
-        { "source": "/(.*)", "destination": "/" },
-        { "source": "src/assets/(.*)", "destination": "/src/assets/$1" }
+      { "source": "^/(?!assets)(?!_next)(?!public)(?!api)(.*)", "destination": "/src/$1" },
+      { "source": "/assets/(.*)", "destination": "/src/assets/$1" },
+      { "source": "/_next/(.*)", "destination": "/src/_next/$1" },
+      { "source": "/public/(.*)", "destination": "/src/public/$1" },
+      { "source": "/api/(.*)", "destination": "/src/api/$1" }
     ]
   }
