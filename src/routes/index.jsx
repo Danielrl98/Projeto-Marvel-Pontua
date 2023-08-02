@@ -8,7 +8,7 @@ import {
 import Dashboard from "../pages/dashboard/dashboard";
 import Perfil from "../pages/perfil/perfil";
 import Character from "../pages/character/character";
-import Login from "../pages/login/Login";
+import Login from "../pages/login/loginIndex";
 import { Context } from "../context/context";
 import SelectHero from "../pages/select-hero/select-hero";
 import history from "../config/history";

@@ -4,6 +4,7 @@ export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
     return {
         define: {
+            
             'process.env.PUBLIC_KEY': JSON.stringify(env.PUBLIC_KEY),
             'process.env.PRIVATE_KEY': JSON.stringify(env.PRIVATE_KEY),
             'process.env.FIREBASE_APIKEY': JSON.stringify(env.FIREBASE_APIKEY),
