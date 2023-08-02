@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Select } from "../style";
 import React, { Fragment } from "react";
 import UtilsHero from "../utils";
-import { publicKey,privateKey,baseURL } from "../../../Auth/Auth";
+import { publicKey,privateKey, baseURL } from "../../../Auth/Auth";
 import axios from "axios";
 import md5 from "md5";
+import theme from "../../../theme/theme";
 
 export default function FakeSelect() {
 
@@ -21,8 +22,9 @@ export default function FakeSelect() {
           ts: timestamp,
           apikey: publicKey,
           hash: hash,
-          modifiedSince: "8/22/2017"
-        };
+          modifiedSince: "8/22/2017",
+          limit:50
+    };
         await axios
           .get(apiUrl, { params })
           .then((response) => {
@@ -44,7 +46,7 @@ useEffect( () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [selected,setSelected] = useState(false)
-  const [selectedName, setselectedName] = useState('Selecione um herói');
+  const [selectedName, setselectedName] = useState('');
   const [selectedImage, setSelectedImage] = useState('');
   const [selectedId, setSelectedId] = useState('');
 
@@ -74,8 +76,19 @@ useEffect( () => {
               {selectedName}
             </div>
           ) : (
-            "Selecione um herói"
+            <div className="no-select">
+                <img src={theme.icons.user}  />
+              <div>Selecione um Agente</div>
+            </div>
           )}
+           {isOpen ? (
+                 <img className="arrow up" src={theme.icons.arrowUP} />
+              ) : (
+                <img className="arrow" src={theme.icons.arrowDown} />
+              )
+
+              }
+        
         </div>
         {isOpen && (
         <div className="div-options">

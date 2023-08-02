@@ -3,7 +3,7 @@ import { firebase } from "../../firebase/firebase";
 import { getFirestore,doc, setDoc } from "firebase/firestore"
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword  } from "firebase/auth";
 import Login from "./formLogin";
-import { environment } from "../../Auth/Auth";
+
 import { Context } from "../../context/context";
 import { Navigate } from "react-router-dom";
 import history from '../../config/history'
@@ -29,7 +29,8 @@ export default function UtilsLogin(){
     const [errorPass,setErrorPass] = useState(false)
     const [messagemErrorPass,setmessagemErrorPass] = useState('')
     const [createAccount,setCreateAccount] = useState(false)
-   
+  
+
     const handleLogin = async (e) => {
       e.preventDefault()
      
@@ -199,7 +200,8 @@ export default function UtilsLogin(){
 
     return(
         <Fragment>
-            <Login value={{errorEmail,messagemErrorEmail,errorPass,messagemErrorPass,createAccount,createUser,receberLogin,handleLogin }}></Login>
+            <Login value={{errorEmail,messagemErrorEmail,errorPass,messagemErrorPass,createAccount,createUser,receberLogin,handleLogin }}>
+            </Login>
         </Fragment>
     )
 

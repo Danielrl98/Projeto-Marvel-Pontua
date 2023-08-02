@@ -12,7 +12,6 @@ import Login from "../pages/login/Login";
 import { Context } from "../context/context";
 import SelectHero from "../pages/select-hero/select-hero";
 import history from "../config/history";
-import { environment } from "../Auth/Auth";
 import ForgotPassword from "../pages/forgot-password/forgot";
 import Success from "../pages/sucessForgot/sucess";
 

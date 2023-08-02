@@ -37,7 +37,10 @@ const theme = {
         arrowWhite: '../src/assets/icons/arrow-right-white.svg',
         inputLogin: '../src/assets/icons/input-login.svg',
         inputSenha: '../src/assets/icons/input-senha.svg',
-        forgotPassword: '../src/assets/icons/forgot-password.svg'
+        forgotPassword: '../src/assets/icons/forgot-password.svg',
+        user: '../src/assets/icons/user.svg',
+        arrowDown: '../src/assets/icons/arrow-down.svg',
+        arrowUP: '../src/assets/icons/arrow-up.svg'
     }
 
 }

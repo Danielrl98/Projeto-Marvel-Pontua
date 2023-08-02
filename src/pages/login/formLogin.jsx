@@ -8,6 +8,7 @@ import { InputComponent } from "../../components/input";
 import HomeLogin from "../../layouts/home/home";
 import history from "../../config/history";
 import { NormalButton } from "../../components/button";
+import Welcome from "./welcome/welcome";
 
 export default function Login(props) {
   const prop = props.value;
@@ -43,6 +44,7 @@ export default function Login(props) {
   };
 
   useEffect(() => {
+    
     if (email !== "" && pass !== "") {
       setDisabledButton(true);
     } else {
@@ -55,6 +57,9 @@ export default function Login(props) {
   }, [authenticate, email, pass]);
   return (
     <Fragment>
+     
+      <Welcome />
+        
       <HomeLogin>
         <section>
           <div>

@@ -57,6 +57,10 @@ export const Select = styled.div`
         position: relative;
         width: 100%;
     }
+    .no-select{
+        display: flex;
+        gap: 11px;
+    }
 
 .selected-option {
     display: flex;
@@ -78,7 +82,19 @@ export const Select = styled.div`
     line-height: 24px; 
     margin-top:5px;
     cursor:pointer;
+    position: relative;
 
+    .arrow{
+        position: absolute;
+        z-index: 0; 
+        cursor: auto;
+        right:10px;
+        top:13px
+    }
+    .up{
+        top:17px;
+        right:14px;
+    }
     .principal{
         display: flex;
         flex-direction: row;
