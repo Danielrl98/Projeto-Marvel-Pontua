@@ -3,7 +3,7 @@ import Menu from "../../layouts/menu/menu";
 import Search from "../../layouts/search/search";
 import { Grid, Buttons, Header } from "./style";
 import VisaoGeral from "./components/visaoGeral/visaoGeral";
-import Comics from "./components/comics/comics";
+import Comics from "./components/comics/comicsIndex";
 import Series from "./components/series/series";
 import Events from "./components/events/events";
 import Authors from "./components/authors/autors";
