@@ -6,7 +6,7 @@ import VisaoGeral from "./components/visaoGeral";
 import Series from "./components/series";
 import Events from "./components/events";
 import { Authors } from "./components/authors/index";
-import { ComicsIndex } from './components/comics/index'
+import { ComicsIndex } from './components/comic'
 import axios from "axios";
 import md5 from "md5";
 import { publicKey, privateKey , baseURL } from "../../Auth/Auth";

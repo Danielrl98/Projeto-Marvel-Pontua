@@ -1,12 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { ComicsGrid } from "./style";
 
 export const ComicsIndex = (props) => {
   const character = props.character.map((e) => e.comics.items);
-
-  useEffect(() => {
-    console.log(character);
-  }, []);
 
   return (
     <Fragment>
