@@ -1,8 +1,50 @@
-# React + Vite
+# PROJETO MARVEL PONTUAWEB DOCUMENTAÇÃO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Instalação
 
-Currently, two official plugins are available:
+Você precisará ter o [NodeJS](https://nodejs.org) instalado na sua máquina, e, após isso, clonar este repositório:
+```sh
+  $ git clone https://github.com/Danielrl98/Projeto-Marvel-Pontua.git
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Depois disso, instale as dependências do Front-end 
+
+```sh
+   npm install 
+ 
+```
+
+## Variaveis de Ambiente
+
+Será necessário renomear o arquivo .env_copy para .env na raiz do projeto.
+
+explicação das variaveis de ambiente:
+
+
+### PUBLIC_KEY=
+### PRIVATE_KEY=
+
+### FIREBASE_APIKEY=
+### FIREBASE_AUTODOMAIN=
+### FIREBASE_PROJECTID=
+### FIREBASE_STORAGEBUCKET=
+### FIREBASE_MESSAGESENDERID=
+### FIREBASE_APPID=
+
+
+conseguir public_key e private_key em (https://developer.marvel.com/)
+
+conseguir firebase keys em (https://console.firebase.google.com/)
+
+No firebase será necessário criar uma autenticação no modo email e senha, marcando a opção de envio por email e alterar permissão em settings, alterando de FALSE para TRUE o modo de LEITURA/ESCRITA, necessário para salvar os dados dos agentes.
+
+Após configurado, rodar os comando para iniciar
+
+```sh
+   npm run dev
+ 
+```
+
+
+
+
