@@ -1,5 +1,7 @@
 # PROJETO MARVEL PONTUAWEB DOCUMENTAÇÃO
 
+Visualização em produção: (https://main--melodic-liger-df3b9c.netlify.app/perfil)
+
 ## Instalação
 
 Você precisará ter o [NodeJS](https://nodejs.org) instalado na sua máquina, e, após isso, clonar este repositório:
@@ -36,14 +38,16 @@ conseguir public_key e private_key em (https://developer.marvel.com/)
 
 conseguir firebase keys em (https://console.firebase.google.com/)
 
-No firebase será necessário criar uma autenticação no modo email e senha, marcando a opção de envio por email e alterar permissão em settings, alterando de FALSE para TRUE o modo de LEITURA/ESCRITA, necessário para salvar os dados dos agentes.
+No firebase será necessário criar uma autenticação no modo email e senha, marcando a opção de envio por email e alterar permissão em settings, mudando de FALSE para TRUE o modo de LEITURA/ESCRITA, necessário para salvar os dados dos agentes.
 
-Após configurado, rodar os comando para iniciar
+Após configurado, rodar o comando para iniciar
 
 ```sh
    npm run dev
  
 ```
+
+dúvidas entre em contato comigo (daniel-rl-98@hotmail.com)
 
 
 
