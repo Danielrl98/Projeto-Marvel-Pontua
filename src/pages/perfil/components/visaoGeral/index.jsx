@@ -31,7 +31,7 @@ export default function VisaoGeral(props) {
                     <h2>{char.name}</h2>
                     <p>{char.description
                       ? char.description
-                      : "No description"}
+                      : "Sem descrição"}
                     </p>
                     </div>
                 </div>

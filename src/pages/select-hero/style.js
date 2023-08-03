@@ -83,7 +83,7 @@ export const Select = styled.div`
     margin-top:5px;
     cursor:pointer;
     position: relative;
-
+    
     .arrow{
         position: absolute;
         z-index: 0; 

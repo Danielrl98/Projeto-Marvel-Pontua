@@ -57,7 +57,9 @@ export const Grid = styled.ul`
         background-repeat: no-repeat;
     }
 `
-export const ButtonPrev = styled.button`
+export const ButtonPrev = styled.div`
+
+        div{
         border-radius: 8px 0px 0px 8px;
         border: 1px solid #D0D5DD;
         background: #FFF;
@@ -73,8 +75,23 @@ export const ButtonPrev = styled.button`
         cursor:pointer;
         display: flex;
         gap: 8px;
+        }
+        
+        span{
+            @media(max-width:767px){
+                display: none;
+            }
+        }
+        .disabled{
+            color: ${theme.color.gray300};
+            pointer-events: none !important; 
+            cursor: no-drop !important; 
+        }
+       
 `
-export const ButtonNext = styled.button`
+export const ButtonNext = styled.div`
+
+        div{
         border-radius: 0px 8px 8px 0px;
         border: 1px solid #D0D5DD;
         background: #FFF;
@@ -90,6 +107,20 @@ export const ButtonNext = styled.button`
         cursor:pointer;
         display: flex;
         gap: 8px;
+
+        }
+        span{
+            @media(max-width:767px){
+                display: none;
+            }
+        }
+        
+
+        .disabled{
+            color: ${theme.color.gray300};
+            pointer-events: none !important; 
+            cursor: no-drop !important; 
+        }
 `
 export const Numbers = styled.div`
         display: flex;
@@ -115,17 +146,30 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    position:fixed;
+    bottom: 0;
+    position: fixed;
+    bottom: 20px; 
+    left: 85%;
+    transform: translateX(-75%);
+
+    @media(max-width:767px){
+        left: 0;
+        transform: translateX(0);
+        bottom: 0;
+        padding-bottom:10px;
+    }
 `
 export const Results = styled.p`
-        color: ${theme.color.blue200};
-        font-family: ${theme.fonts.epilogue};
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: -0.36px;
-        text-align: center;
-        padding:20px
+    color: ${theme.color.blue200};
+    font-family: ${theme.fonts.epilogue};
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+    text-align: center;
+    padding:20px
         
 
 `

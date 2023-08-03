@@ -12,12 +12,12 @@ export default function Events(props){
     return(
         <Fragment>
             <EventsGrid>
-            {character ? (
+            {character.length !== 0 ? (
           character[0].map((char) => {
             return (
               <div key={char.name}>
                 <ul>
-                  <li>&nbsp;&bull; {char.name}</li>
+                  <li>&nbsp;&bull; <a target="__blank" href={(char.resourceURI).replace('gateway.marvel.com/v1/public/events/','marvel.com/comics/events/')   + '/' + (char.name).replaceAll(' ','_')}>{char.name}</a></li>
                 </ul>
               </div>
             );

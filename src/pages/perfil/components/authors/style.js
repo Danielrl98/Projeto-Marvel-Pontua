@@ -4,14 +4,19 @@ import theme from "../../../../theme/theme";
 export const AuthorGrid = styled.div`
 
     li{
-    color: ${theme.color.gray500};
-    font-family: ${theme.fonts.inter};
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
-    list-style: none;
-    list-style: none;
+        list-style: none;
+        a{
+            color: ${theme.color.gray500};
+            font-family: ${theme.fonts.inter};
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+            list-style: none;
+            text-decoration: none;
+  
+        }
+    
     }
     
 `

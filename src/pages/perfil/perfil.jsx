@@ -127,7 +127,7 @@ export default function Perfil(props) {
           <section>
           <Header>
             <div>
-              <h1>{ idHeroSingle ? 'Character' : 'Perfil'}</h1>
+              <h1>{ idHeroSingle ? 'Agente' : 'Perfil'}</h1>
             </div>
             <div>
               <strong>/</strong>
@@ -151,41 +151,41 @@ export default function Perfil(props) {
             </li>
             <li>
             {exibirComponent === "B" && (
-              <button onClick={() => SetExibirComponent("B")} className="active">Comics</button>
+              <button onClick={() => SetExibirComponent("B")} className="active">Quadrinhos</button>
             ) 
             }
             {exibirComponent !== "B" && (
-              <button onClick={() => SetExibirComponent("B")}>Comics</button>
+              <button onClick={() => SetExibirComponent("B")}>Quadrinhos</button>
             )  
             }
             </li>
             <li>
             {exibirComponent === "C" && (
-              <button onClick={() => SetExibirComponent("C")} className="active">Series</button>
+              <button onClick={() => SetExibirComponent("C")} className="active">Séries</button>
             ) 
             }
             {exibirComponent !== "C" && (
-              <button onClick={() => SetExibirComponent("C")}>Series</button>
+              <button onClick={() => SetExibirComponent("C")}>Séries</button>
             )  
             }
             </li>
             <li>
             {exibirComponent === "D" && (
-              <button onClick={() => SetExibirComponent("D")} className="active">Events</button>
+              <button onClick={() => SetExibirComponent("D")} className="active">Eventos</button>
             ) 
             }
             {exibirComponent !== "D" && (
-              <button onClick={() => SetExibirComponent("D")}>Events</button>
+              <button onClick={() => SetExibirComponent("D")}>Eventos</button>
             )  
             }
             </li>
             <li>
             {exibirComponent === "E" && (
-              <button onClick={() => SetExibirComponent("DE")} className="active">Authors</button>
+              <button onClick={() => SetExibirComponent("DE")} className="active">Autores</button>
             ) 
             }
             {exibirComponent !== "E" && (
-              <button onClick={() => SetExibirComponent("E")}>Authors</button>
+              <button onClick={() => SetExibirComponent("E")}>Autores</button>
             )  
             }
             </li>

@@ -16,7 +16,7 @@ export default function Series(props) {
             return (
               <div key={char.name}>
                 <ul>
-                  <li>&nbsp;&bull; {char.name}</li>
+                  <li>&nbsp;&bull; <a target="__blank" href={(char.resourceURI).replace('gateway.marvel.com/v1/public/series/','marvel.com/comics/series/')   + '/' + (char.name).replaceAll(' ','_')}>{char.name}</a></li>
                 </ul>
               </div>
             );
