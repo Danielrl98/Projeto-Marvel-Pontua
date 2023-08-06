@@ -15,7 +15,6 @@ import { firebase } from "../../firebase/firebase";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { Context } from "../../context/context";
 
-
 export default function Perfil(props) {
 
   const [idHeroSingle,setIdHeroSingle] = useState(0)
@@ -31,21 +30,24 @@ export default function Perfil(props) {
 
   const hash = md5(timestamp + privateKey + publicKey);
 
-  async function requisicao(){
-    let params = {
-      ts: timestamp,
-      apikey: publicKey,
-      hash: hash,
-      
-    }
-    await axios
-      .get(apiUrl, { params } )
-      .then((response) => {
-        const characters = response.data.data.results;
-       /* console.log(characters)*/
-        setCharacter(characters)
+ 
+
+  const requisicao = async () =>{
+
+      let params = {
+        ts: timestamp,
+        apikey: publicKey,
+        hash: hash,
         
-      })
+      }
+        
+      await axios.get(apiUrl, { params } )
+        .then((response) => {
+          const characters = response.data.data.results;
+          setCharacter(characters)
+          
+        })
+   
   }
 
   function handleAlternate() {
@@ -97,13 +99,18 @@ export default function Perfil(props) {
       setIdHeroSingle(props.idhero)
       setId(props.idhero)
       if( id !== 0){
-        requisicao()
+        setTimeout(() => {
+          requisicao()
+        }, 300);
       }
       
     } else {
 
       if( id !== 0){
-        requisicao()
+        setTimeout(() => {
+          requisicao()
+        }, 300);
+      
       }
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         setUser(user);
@@ -201,6 +208,7 @@ export default function Perfil(props) {
           </section>
         </div>
       </Grid>
+
     </Fragment>
   );
 }
