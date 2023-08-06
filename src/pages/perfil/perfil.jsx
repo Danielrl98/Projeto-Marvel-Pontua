@@ -24,15 +24,12 @@ export default function Perfil(props) {
   const [load,setLoad] = useState(true)
   const [character,setCharacter] = useState([])
   
-  const apiUrl = baseURL + `/v1/public/characters/${id}`;
-  
-  const timestamp = new Date().getTime();
-
-  const hash = md5(timestamp + privateKey + publicKey);
-
- 
 
   const requisicao = async () =>{
+
+    const apiUrl = `https://gateway.marvel.com/v1/public/characters/${id}`;
+    const timestamp = new Date().getTime();
+    const hash = md5(timestamp + privateKey + publicKey);
 
       let params = {
         ts: timestamp,
@@ -40,13 +37,17 @@ export default function Perfil(props) {
         hash: hash,
         
       }
-        
-      await axios.get(apiUrl, { params } )
-        .then((response) => {
-          const characters = response.data.data.results;
-          setCharacter(characters)
-          
-        })
+
+     const response = await axios.get(apiUrl, { params } )
+    
+     try {
+      const characters = response.data.data.results;
+      setCharacter(characters)
+     }
+      catch(e){
+        console.log(e)
+     }        
+
    
   }
 
